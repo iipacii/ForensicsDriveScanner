@@ -1,0 +1,14 @@
+{
+    "root": {
+        "folder1": {
+            "file1.txt": "10KB",
+            "file2.txt": "15KB"
+        },
+        "folder2": {
+            "file3.txt": "25KB",
+            "subfolder": {
+                "file4.txt": "30KB"
+            }
+        }
+    }
+}
