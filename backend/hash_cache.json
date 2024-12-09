@@ -1,0 +1,46 @@
+{
+    "12d5023cf0734abcd97b25598b23ca8805727b442474f21487f0d34c68496d86": {
+        "status": null,
+        "stats": {},
+        "scan_date": 1733671067
+    },
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": {
+        "status": null,
+        "stats": {},
+        "scan_date": 1733707093
+    },
+    "e48ffe2545b1f878dbab365c0aeb88c16c0cbde5c70ab878ad14e5f2a7e241a2": {
+        "status_code": 404,
+        "data": null,
+        "message": "File not found in VirusTotal database - likely not a known malicious file"
+    },
+    "a6906db1bec4e975e8437c6d494043b1c417703c3dbc1983dafeb4d4a11924d3": {
+        "status_code": 404,
+        "data": null,
+        "message": "File not found in VirusTotal database - likely not a known malicious file"
+    },
+    "74faf334cb0bdd3e9dfab8c323d4eb3b9b089bcaadc7dbd639d9aa93a4f6f829": {
+        "status_code": 200,
+        "data": {
+            "last_analysis_stats": {
+                "malicious": 0,
+                "suspicious": 0,
+                "undetected": 70,
+                "harmless": 0,
+                "timeout": 2,
+                "confirmed-timeout": 0,
+                "failure": 0,
+                "type-unsupported": 4
+            },
+            "signature_verified": "Signed",
+            "total_votes": {
+                "harmless": 11,
+                "malicious": 2
+            },
+            "last_analysis_date": "2024-12-07 14:05:18"
+        },
+        "message": "File analysis complete",
+        "error_details": null,
+        "timestamp": "2024-12-09T08:35:40.325853"
+    }
+}

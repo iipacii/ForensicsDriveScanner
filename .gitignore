@@ -218,3 +218,4 @@ build
 
 # TernJS port file
 .tern-port
+backend/exampleResponse.json
