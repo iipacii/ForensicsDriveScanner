@@ -1,0 +1,983 @@
+{
+    "/$AttrDef": {
+        "size": 2560,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 4,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": true,
+            "hidden_type": "windows_system",
+            "reasons": [
+                "Windows hidden attribute set",
+                "Windows system attribute set"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$BadClus": {
+        "size": 0,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 8,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Bitmap": {
+        "size": 123160,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 6,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Boot": {
+        "size": 8192,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 7,
+        "permissions": "0o555",
+        "uid": 48,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend": {
+        "size": 552,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 11,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$Deleted": {
+        "size": 48,
+        "created": "2024-12-02 04:31:56",
+        "modified": "2024-12-02 04:31:56",
+        "accessed": "2024-12-09 21:00:31",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 29,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$ObjId": {
+        "size": 0,
+        "created": "2024-12-02 04:31:56",
+        "modified": "2024-12-02 04:31:56",
+        "accessed": "2024-12-02 04:31:56",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 25,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$Quota": {
+        "size": 0,
+        "created": "2024-12-02 04:31:56",
+        "modified": "2024-12-02 04:31:56",
+        "accessed": "2024-12-02 04:31:56",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 24,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$Reparse": {
+        "size": 0,
+        "created": "2024-12-02 04:31:56",
+        "modified": "2024-12-02 04:31:56",
+        "accessed": "2024-12-09 21:00:31",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 26,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$RmMetadata": {
+        "size": 336,
+        "created": "2024-12-02 04:31:56",
+        "modified": "2024-12-02 04:31:56",
+        "accessed": "2024-12-02 04:31:56",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 27,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$RmMetadata/$Repair": {
+        "size": 0,
+        "created": "2024-12-02 04:31:56",
+        "modified": "2024-12-02 04:31:56",
+        "accessed": "2024-12-02 04:31:56",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 28,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$RmMetadata/$Txf": {
+        "size": 48,
+        "created": "2024-12-02 04:31:56",
+        "modified": "2024-12-02 04:31:56",
+        "accessed": "2024-12-02 04:31:56",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 31,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$RmMetadata/$TxfLog": {
+        "size": 568,
+        "created": "2024-12-02 04:31:56",
+        "modified": "2024-12-02 04:31:59",
+        "accessed": "2024-12-02 04:31:59",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 30,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$RmMetadata/$TxfLog/$Tops": {
+        "size": 100,
+        "created": "2024-12-02 04:31:56",
+        "modified": "2024-12-02 04:31:56",
+        "accessed": "2024-12-02 04:31:56",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 32,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$RmMetadata/$TxfLog/$TxfLog.blf": {
+        "size": 65536,
+        "created": "2024-12-02 04:31:57",
+        "modified": "2024-12-02 04:31:57",
+        "accessed": "2024-12-02 04:31:57",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 33,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$RmMetadata/$TxfLog/$TxfLogContainer00000000000000000001": {
+        "size": 2097152,
+        "created": "2024-12-02 04:31:58",
+        "modified": "2024-12-02 04:31:58",
+        "accessed": "2024-12-02 04:31:58",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 34,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Extend/$RmMetadata/$TxfLog/$TxfLogContainer00000000000000000002": {
+        "size": 2097152,
+        "created": "2024-12-02 04:31:59",
+        "modified": "2024-12-02 04:31:59",
+        "accessed": "2024-12-02 04:31:59",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 35,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$LogFile": {
+        "size": 8716288,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 2,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$MFT": {
+        "size": 262144,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 0,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": true,
+            "hidden_type": "windows_system",
+            "reasons": [
+                "Windows hidden attribute set",
+                "Windows system attribute set"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$MFTMirr": {
+        "size": 4096,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 1,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": true,
+            "hidden_type": "windows_system",
+            "reasons": [
+                "Windows hidden attribute set",
+                "Windows system attribute set"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Secure": {
+        "size": 0,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 9,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$UpCase": {
+        "size": 131072,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 10,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": true,
+            "hidden_type": "windows_system",
+            "reasons": [
+                "Windows hidden attribute set",
+                "Windows system attribute set"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/$Volume": {
+        "size": 0,
+        "created": "2024-12-02 04:31:47",
+        "modified": "2024-12-02 04:31:47",
+        "accessed": "2024-12-02 04:31:47",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 3,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/.imHere - Copy.txt": {
+        "size": 9,
+        "created": "2024-12-09 09:11:47",
+        "modified": "2024-12-09 09:10:43",
+        "accessed": "2024-12-09 21:34:56",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 41,
+        "permissions": "0o333",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": true,
+            "hidden_type": "unix_hidden",
+            "reasons": [
+                "Filename starts with dot"
+            ]
+        },
+        "hashes": {
+            "md5": "3ac7ea2f0bd4e3ad27bd7c6548f63537",
+            "sha256": "3a7e3d6bb100cb7483a1d4424eb21f1b527f96e60fb5f85cd17c975f88494c8a",
+            "virus_scan": {
+                "data": null,
+                "error": null,
+                "message": "File not found in VirusTotal database"
+            }
+        },
+        "file_type": {
+            "declared_extension": "txt",
+            "detected_type": {
+                "extension": "unknown",
+                "mime_type": "unknown",
+                "description": "Unknown Format"
+            },
+            "analysis": {
+                "is_suspicious": true,
+                "confidence": "low",
+                "reasons": [
+                    "No known file signature detected"
+                ]
+            }
+        }
+    },
+    "/imHere.txt": {
+        "size": 9,
+        "created": "2024-12-09 09:10:25",
+        "modified": "2024-12-09 09:10:43",
+        "accessed": "2024-12-09 21:34:56",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 40,
+        "permissions": "0o111",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": true,
+            "hidden_type": "windows_hidden",
+            "reasons": [
+                "Windows hidden attribute set"
+            ]
+        },
+        "hashes": {
+            "md5": "3ac7ea2f0bd4e3ad27bd7c6548f63537",
+            "sha256": "3a7e3d6bb100cb7483a1d4424eb21f1b527f96e60fb5f85cd17c975f88494c8a",
+            "virus_scan": {
+                "data": null,
+                "error": null,
+                "message": "File not found in VirusTotal database"
+            }
+        },
+        "file_type": {
+            "declared_extension": "txt",
+            "detected_type": {
+                "extension": "unknown",
+                "mime_type": "unknown",
+                "description": "Unknown Format"
+            },
+            "analysis": {
+                "is_suspicious": true,
+                "confidence": "low",
+                "reasons": [
+                    "No known file signature detected"
+                ]
+            }
+        }
+    },
+    "/Important": {
+        "size": 152,
+        "created": "2024-12-09 21:02:56",
+        "modified": "2024-12-09 21:03:56",
+        "accessed": "2024-12-09 21:30:15",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 42,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/Important/Homework": {
+        "size": 336,
+        "created": "2024-12-09 21:03:51",
+        "modified": "2024-12-09 21:05:04",
+        "accessed": "2024-12-09 21:30:15",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 43,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/Important/Homework/ADM": {
+        "size": 48,
+        "created": "2024-12-09 21:04:06",
+        "modified": "2024-12-09 21:04:06",
+        "accessed": "2024-12-09 21:04:09",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 44,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/Important/Homework/DF": {
+        "size": 48,
+        "created": "2024-12-09 21:04:11",
+        "modified": "2024-12-09 21:04:11",
+        "accessed": "2024-12-09 21:29:19",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 45,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/Important/Homework/ProjectFiles": {
+        "size": 160,
+        "created": "2024-12-09 21:04:18",
+        "modified": "2024-12-09 21:29:42",
+        "accessed": "2024-12-09 21:30:15",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 47,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/Important/Homework/ProjectFiles/eicar.com.txt": {
+        "size": 68,
+        "created": "2024-12-09 21:28:52",
+        "modified": "2024-12-09 21:28:52",
+        "accessed": "2024-12-09 21:29:42",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 48,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": true,
+            "hidden_type": "windows_hidden",
+            "reasons": [
+                "Windows hidden attribute set"
+            ]
+        },
+        "hashes": {
+            "md5": "44d88612fea8a8f36de82e1278abb02f",
+            "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f",
+            "virus_scan": {
+                "data": {
+                    "last_analysis_stats": {
+                        "malicious": 65,
+                        "suspicious": 0,
+                        "undetected": 3,
+                        "harmless": 0,
+                        "timeout": 0,
+                        "confirmed-timeout": 0,
+                        "failure": 1,
+                        "type-unsupported": 7
+                    },
+                    "signature_verified": false,
+                    "total_votes": {
+                        "harmless": 2156,
+                        "malicious": 385
+                    },
+                    "last_analysis_date": "2024-12-09 21:27:22"
+                },
+                "error": null,
+                "message": "File analysis complete"
+            }
+        },
+        "file_type": {
+            "declared_extension": "txt",
+            "detected_type": {
+                "extension": "unknown",
+                "mime_type": "unknown",
+                "description": "Unknown Format"
+            },
+            "analysis": {
+                "is_suspicious": true,
+                "confidence": "low",
+                "reasons": [
+                    "No known file signature detected"
+                ]
+            }
+        }
+    },
+    "/notActuallyText.txt": {
+        "size": 50421,
+        "created": "2024-12-09 08:57:31",
+        "modified": "2020-04-23 14:41:56",
+        "accessed": "2024-12-09 21:34:56",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 39,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": []
+        },
+        "hashes": {
+            "md5": "406695112ea099cb6a16ace0591cfc8f",
+            "sha256": "b674ad007e72ed7d31a8b34a2372864d27788f7aab0ce88a64d2117d20ba2e35",
+            "virus_scan": {
+                "data": null,
+                "error": null,
+                "message": "File not found in VirusTotal database"
+            }
+        },
+        "file_type": {
+            "declared_extension": "txt",
+            "detected_type": {
+                "extension": "png",
+                "mime_type": "image/png",
+                "description": "PNG Image"
+            },
+            "analysis": {
+                "is_suspicious": true,
+                "confidence": "high",
+                "reasons": [
+                    "Extension mismatch: claims txt but detected png"
+                ]
+            }
+        }
+    },
+    "/System Volume Information": {
+        "size": 280,
+        "created": "2024-12-02 04:32:01",
+        "modified": "2024-12-02 04:32:01",
+        "accessed": "2024-12-09 21:00:31",
+        "type": "Directory",
+        "flags": "Allocated, Used",
+        "file_id": 36,
+        "permissions": "0o555",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": null,
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/System Volume Information/IndexerVolumeGuid": {
+        "size": 76,
+        "created": "2024-12-02 04:32:01",
+        "modified": "2024-12-02 04:32:01",
+        "accessed": "2024-12-09 21:00:31",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 37,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/System Volume Information/WPSettings.dat": {
+        "size": 12,
+        "created": "2024-12-02 04:32:01",
+        "modified": "2024-12-02 04:32:02",
+        "accessed": "2024-12-09 21:00:32",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 38,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    },
+    "/x360ce.exe": {
+        "size": 15460624,
+        "created": "2024-12-02 04:42:12",
+        "modified": "2024-11-16 18:54:41",
+        "accessed": "2024-12-09 21:34:56",
+        "type": "File",
+        "flags": "Allocated, Used",
+        "file_id": 46,
+        "permissions": "0o777",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": []
+        },
+        "hashes": {
+            "md5": "be80f3348b240bcee1aa96d33fe0e768",
+            "sha256": "74faf334cb0bdd3e9dfab8c323d4eb3b9b089bcaadc7dbd639d9aa93a4f6f829",
+            "virus_scan": {
+                "data": {
+                    "last_analysis_stats": {
+                        "malicious": 0,
+                        "suspicious": 0,
+                        "undetected": 70,
+                        "harmless": 0,
+                        "timeout": 2,
+                        "confirmed-timeout": 0,
+                        "failure": 0,
+                        "type-unsupported": 4
+                    },
+                    "signature_verified": "Signed",
+                    "total_votes": {
+                        "harmless": 11,
+                        "malicious": 2
+                    },
+                    "last_analysis_date": "2024-12-07 14:05:18"
+                },
+                "error": null,
+                "message": "File analysis complete"
+            }
+        },
+        "file_type": {
+            "declared_extension": "exe",
+            "detected_type": {
+                "extension": "exe",
+                "mime_type": "application/x-msdownload",
+                "description": "Windows Executable"
+            },
+            "analysis": {
+                "is_suspicious": false,
+                "confidence": "high",
+                "reasons": []
+            }
+        }
+    },
+    "/$OrphanFiles": {
+        "size": 0,
+        "created": "N/A",
+        "modified": "N/A",
+        "accessed": "N/A",
+        "type": "Unknown",
+        "flags": "Allocated, Used",
+        "file_id": 256,
+        "permissions": "0o0",
+        "uid": 0,
+        "gid": 0,
+        "hidden_status": {
+            "is_hidden": false,
+            "hidden_type": "none",
+            "reasons": [
+                "Unable to get file attributes"
+            ]
+        },
+        "hashes": {
+            "md5": null,
+            "sha256": null,
+            "virus_scan": null
+        },
+        "file_type": null
+    }
+}
