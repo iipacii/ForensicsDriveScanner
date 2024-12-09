@@ -1,4 +1,6 @@
 import logging
+
+from ..core.hidden_detector import HiddenDetector
 from ..core.virus_scanner import VirusScanner
 from fastapi import APIRouter, HTTPException
 from ..core.scanner import get_removable_drives
@@ -74,6 +76,8 @@ async def scan_drive(drive: str):
                     
             except Exception as e:
                 logger.error(f"Failed to analyze {filename}: {str(e)}")
+            hidden_detector = HiddenDetector()
+            metadata["hidden_status"] = hidden_detector.analyze_file(f"{drive}{filename}")
 
         logger.info(f"Scan completed for drive {drive}")
         return {

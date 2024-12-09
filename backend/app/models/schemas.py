@@ -26,6 +26,11 @@ class HashData(BaseModel):
     sha256: Optional[str] = None
     virus_scan: Optional[VirusScanResult] = None
 
+class HiddenAnalysis(BaseModel):
+    is_hidden: bool
+    hidden_type: str
+    reasons: List[str]
+    
 class MFTMetadata(BaseModel):
     size: int
     created: str
@@ -37,6 +42,7 @@ class MFTMetadata(BaseModel):
     permissions: str
     uid: int
     gid: int
+    hidden_status: Optional[HiddenAnalysis] = None
     hashes: Optional[HashData] = None
     file_type: Optional[FileTypeInfo] = None
 
