@@ -5,6 +5,7 @@ from ..core.scanner import get_removable_drives
 from ..core.mft import scan_mft
 from ..core.analyzer import FileAnalyzer
 from ..models.schemas import ScanResponse
+from ..core.file_type_detector import FileTypeDetector
 
 router = APIRouter()
 
@@ -15,7 +16,8 @@ async def list_drives():
         raise HTTPException(status_code=404, detail="No removable drives detected")
     return drives
 
-# routes.py modifications
+# routes.py scan_drive function modification
+
 @router.get("/scan", response_model=ScanResponse)
 async def scan_drive(drive: str):
     logger = logging.getLogger("api.scan")
@@ -38,37 +40,41 @@ async def scan_drive(drive: str):
             processed += 1
             logger.info(f"Processing file {processed}/{total_files}: {filename}")
             
+            # Initialize default hash and file type data
+            metadata["hashes"] = {"md5": None, "sha256": None}
+            metadata["file_type"] = None
+
+            # Skip system files and directories
             if (filename.startswith('$') or 
                 filename in ['.', 'System Volume Information'] or
                 metadata['type'] == 'Directory'):
                 logger.debug(f"Skipping system file/directory: {filename}")
-                metadata["hashes"] = {"md5": None, "sha256": None}
                 continue
 
             try:
                 analyzer = FileAnalyzer(f"{drive}{filename}")
                 hash_result = analyzer.calculate_hashes()
                 
-                if "error" in hash_result:
-                    logger.error(f"Hash calculation error for {filename}: {hash_result['error']}")
-                    metadata["hashes"] = {"md5": None, "sha256": None}
-                else:
+                if "error" not in hash_result:
+                    metadata["hashes"] = hash_result
+                    
                     if virus_scanner and hash_result.get("sha256"):
                         try:
                             logger.info(f"Scanning file: {filename} with hash: {hash_result['sha256']}")
                             scan_result = virus_scanner.check_hash(hash_result["sha256"])
-                            hash_result["virus_scan"] = scan_result
+                            metadata["hashes"]["virus_scan"] = scan_result
                             logger.info(f"Scan completed for {filename}: {scan_result['message']}")
                         except Exception as e:
                             logger.error(f"Virus scan failed for {filename}: {e}")
-                            hash_result["virus_scan"] = None
-                            
-                    metadata["hashes"] = hash_result
+                            metadata["hashes"]["virus_scan"] = None
+                    
+                    # Add file type analysis
+                    type_detector = FileTypeDetector()
+                    metadata["file_type"] = type_detector.analyze_file(f"{drive}{filename}")
                     
             except Exception as e:
                 logger.error(f"Failed to analyze {filename}: {str(e)}")
-                metadata["hashes"] = {"md5": None, "sha256": None}
-        
+
         logger.info(f"Scan completed for drive {drive}")
         return {
             "status": "success",

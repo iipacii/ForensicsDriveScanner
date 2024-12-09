@@ -1,5 +1,20 @@
 from pydantic import BaseModel
-from typing import Dict, Optional, List
+from typing import Dict, Optional, List, Any
+
+class FileTypeAnalysis(BaseModel):
+    is_suspicious: bool
+    confidence: str
+    reasons: List[str]
+
+class DetectedType(BaseModel):
+    extension: str
+    mime_type: str 
+    description: str
+
+class FileTypeInfo(BaseModel):
+    declared_extension: str
+    detected_type: DetectedType
+    analysis: FileTypeAnalysis
 
 class VirusScanResult(BaseModel):
     data: Optional[Dict] = None
@@ -23,6 +38,7 @@ class MFTMetadata(BaseModel):
     uid: int
     gid: int
     hashes: Optional[HashData] = None
+    file_type: Optional[FileTypeInfo] = None
 
 class ScanResponse(BaseModel):
     status: str

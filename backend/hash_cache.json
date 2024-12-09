@@ -42,5 +42,12 @@
         "message": "File analysis complete",
         "error_details": null,
         "timestamp": "2024-12-09T08:35:40.325853"
+    },
+    "b674ad007e72ed7d31a8b34a2372864d27788f7aab0ce88a64d2117d20ba2e35": {
+        "status_code": 404,
+        "data": null,
+        "message": "File not found in VirusTotal database",
+        "error_details": null,
+        "timestamp": "2024-12-09T08:58:11.855102"
     }
 }
