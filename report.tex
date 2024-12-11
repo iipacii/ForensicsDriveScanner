@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\geometry{margin=1in}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+\title{Project Report: NTFS Forensic Analysis Tool}
+\author{Pranshu Acharya \and Rahul Manjunath}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Goal}
+The goal of this project was to develop a forensic analysis tool inspired by WizTree, focusing on NTFS file systems. The tool aims to identify and visualize large or suspicious files, assisting forensic analysts in investigations by providing actionable insights through intuitive visualizations.
+
+\section*{Scope}
+\begin{itemize}
+    \item \textbf{NTFS Drive Scanning:} The tool will specifically scan NTFS file systems, parsing directories, subdirectories, and the NTFS Master File Table (MFT) for relevant data.
+    
+    \item \textbf{File Analysis:} It will analyze files based on forensic indicators, including:
+    \begin{itemize}
+        \item File size
+        \item File type (e.g., documents, executables)
+        \item Modification, creation, and access timestamps
+        \item NTFS-specific attributes like file permissions or encryption
+    \end{itemize}
+    
+    \item \textbf{Treemap Visualization:} The tool will provide a visual representation of disk space using a treemap, with suspicious files highlighted.
+    
+    \item \textbf{Flagging Suspicious Files:} It will flag files that are unusually large or have suspicious NTFS metadata (e.g., altered timestamps, hidden attributes).
+    
+    \item \textbf{Basic Report Generation:} The tool will produce a simple report listing flagged files and their metadata (name, size, timestamps, and NTFS-specific information like security attributes).
+\end{itemize}
+
+
+\section*{Technical Implementation}
+
+The forensic analysis tool is built with a client-server architecture that separates the frontend visualization from the backend analysis engine. The backend uses FastAPI (Python) to expose REST endpoints, while the frontend is built with Electron.js to provide a native desktop experience. This separation allows the intensive disk operations to run without blocking the user interface.
+
+The core analysis engine focuses on three main components:
+
+First, the NTFS scanner directly interfaces with the Master File Table (MFT) using the pytsk3 library. It extracts essential file system metadata including file names, sizes, timestamps, and security attributes. The scanner implements comprehensive error handling to manage common issues like access violations and corrupted entries, ensuring reliable operation even with damaged file systems.
+
+Second, the file analysis pipeline processes each discovered file through multiple analyzers:
+\begin{itemize}
+    \item The FileAnalyzer calculates cryptographic hashes (MD5, SHA256) using chunked reading to handle large files efficiently
+    \item The FileTypeDetector examines file headers to identify true file types, regardless of extensions
+    \item The HiddenDetector checks for both Windows attributes (hidden, system) and Unix-style hidden files
+    \item The VirusScanner integrates with the VirusTotal API to check file hashes against known malware, with results cached locally to improve performance
+\end{itemize}
+
+Third, the visualization layer renders the analyzed data using D3.js's treemap implementation. The display highlights suspicious files based on multiple factors:
+\begin{itemize}
+    \item Mismatched file extensions
+    \item Hidden file attributes
+    \item Unusual file sizes
+    \item Positive virus scan results
+    \item Suspicious timestamps
+\end{itemize}
+
+The entire system is supported by comprehensive logging and error handling, with each component producing detailed diagnostic information to aid in troubleshooting. The backend implements retry mechanisms for critical operations, ensuring reliability during file system operations and API calls.
+
+Data consistency is maintained through strict schema validation using Pydantic models, which define the structure for file metadata, analysis results, and API responses. This ensures reliable data exchange between the frontend and backend components while providing clear documentation of the data formats.
+\section*{Key Features}
+\begin{itemize}
+    \item Real-time NTFS scanning and metadata extraction
+    \item Suspicious file detection based on multiple indicators
+    \item Hash-based file identification and caching
+    \item Interactive visualization of file system structure
+    \item Detailed file metadata reporting
+\end{itemize}
+
+\section*{Challenges}
+\begin{itemize}
+    \item \textbf{NTFS Parsing:} Complex MFT structure required careful handling and extensive error checking
+    \item \textbf{Performance:} Large file systems required optimizations like:
+    \begin{itemize}
+        \item Chunked file reading for hash calculation
+        \item Cached virus scan results
+        \item Lazy loading of detailed metadata
+    \end{itemize}
+    \item \textbf{Integration:} Coordinating backend parsing with frontend visualization required robust IPC
+\end{itemize}
+
+\section*{Future Enhancements}
+\begin{itemize}
+    \item Support for additional file systems beyond NTFS
+    \item Enhanced metadata analysis capabilities
+    \item Machine learning-based anomaly detection
+    \item Advanced reporting features
+    \item Performance optimizations for very large datasets
+\end{itemize}
+
+\section*{Repository}
+The source code is available at: \href{https://github.com/your-repo}{https://github.com/your-repo}
+
+\end{document}
