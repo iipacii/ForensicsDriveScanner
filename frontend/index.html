@@ -12,6 +12,11 @@
             height: 600px;
             border: 1px solid #ccc;
         }
+
+        #chart {
+    width: 100%;
+    height: 100%;
+}
     </style>
 </head>
 <body>
@@ -22,7 +27,9 @@
     </select>
     <button id="scanDrive">Scan Drive</button>
     <button id="openVisualization">Open Visualization</button>
-    <div id="visualizationContainer"></div>
+    <div id="visualizationContainer">
+        <div id="chart"></div>
+    </div>
     <pre id="output"></pre>
     <script src="renderer.js"></script>
 </body>

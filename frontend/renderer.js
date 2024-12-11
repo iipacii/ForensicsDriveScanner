@@ -1,3 +1,93 @@
+function getColorAndMessages(value) {
+    let color = null;
+    let messages = [];
+
+    if (value.hidden_status && value.hidden_status.is_hidden) {
+        color = 'red';
+        value.hidden_status.reasons.forEach(reason => 
+            messages.push(`Hidden status: ${reason}`));
+    }
+    
+    if (value.hashes?.virus_scan) {
+        color = 'red';
+        messages.push(`Virus scan: ${value.hashes.virus_scan.message || 'No message provided'}`);
+    }
+    
+    if (value.file_type?.analysis?.is_suspicious) {
+        color = 'red';
+        value.file_type.analysis.reasons.forEach(reason => 
+            messages.push(`Suspicious file type: ${reason}`));
+    }
+
+    return { color, messages };
+}
+
+function restructureData(data) {
+    const result = {};
+
+    for (const [path, value] of Object.entries(data)) {
+        const parts = path.split('/').filter(Boolean);
+        let current = result;
+        
+        // Build path structure
+        for (let i = 0; i < parts.length; i++) {
+            const part = parts[i];
+            current[part] = current[part] || {};
+            
+            if (i === parts.length - 1) {
+                // Process leaf node
+                const { color, messages } = getColorAndMessages(value);
+                if (color) {
+                    current[part].color = color;
+                    current[part].messages = messages;
+                }
+            }
+            current = current[part];
+        }
+    }
+    
+    return result;
+}
+
+function flattenForSunburst(data, parent = '', result = []) {
+    if (parent === '') {
+        result.push({
+            id: 'root',
+            parent: '',
+            label: 'root',
+            color: 'lightgrey',
+            customdata: ''
+        });
+    }
+
+    for (const [key, value] of Object.entries(data)) {
+        const newParent = parent === '' ? 'root' : parent;
+        const currentId = `${newParent}/${key}`;
+        
+        // Handle leaf nodes and intermediate nodes
+        const color = value.color || 'blue';
+        const messages = value.messages || [];
+        const messagesStr = messages.join('<br>');
+
+        result.push({
+            id: currentId,
+            parent: newParent,
+            label: key,
+            color: color,
+            customdata: messagesStr
+        });
+
+        // Recursively process children if they exist
+        if (Object.keys(value).some(k => k !== 'color' && k !== 'messages')) {
+            flattenForSunburst(value, currentId, result);
+        }
+    }
+
+    return result;
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
 
@@ -32,23 +122,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scanButton.addEventListener('click', async () => {
         console.log("Scan Drive button clicked");
-        visualizationContainer.style.display = 'none';
-
+    
         const drivePath = driveSelect.value;
         if (!drivePath) {
             output.textContent = "Please select a drive.";
             return;
         }
-
-        console.log(`Drive path selected: ${drivePath}`);
-
+    
         try {
+            visualizationContainer.style.display = 'block'; // Show container
             const response = await fetch(`http://127.0.0.1:8000/scan?drive=${encodeURIComponent(drivePath)}`);
             const result = await response.json();
 
+            console.log("Scan result:", result);
+    
             if (result.status === 'success') {
-                console.log("Fetch successful:", result);
-                output.textContent = JSON.stringify(result.data, null, 4);
+                // Process the data
+                const restructured = restructureData(result.data);
+                const sunburstData = flattenForSunburst(restructured);
+    
+                // Prepare Plotly data
+                const plotData = [{
+                    ids: sunburstData.map(item => item.id),
+                    labels: sunburstData.map(item => item.label),
+                    parents: sunburstData.map(item => item.parent),
+                    type: 'sunburst',
+                    marker: { colors: sunburstData.map(item => item.color) },
+                    customdata: sunburstData.map(item => item.customdata),
+                    hovertemplate: '<b>%{label}</b><br>%{customdata}<extra></extra>'
+                }];
+                
+                const layout = {
+                    margin: { t: 0, l: 0, r: 0, b: 0 },
+                    width: visualizationContainer.clientWidth,
+                    height: visualizationContainer.clientHeight,
+                    autosize: true
+                };
+                
+                Plotly.newPlot('chart', plotData, layout);
+                output.textContent = '';
             } else {
                 console.error("Error from API:", result.message);
                 output.textContent = `Error: ${result.message}`;
@@ -59,36 +171,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    openVisualizationButton.addEventListener('click', async () => {
-        console.log("Open Visualization button clicked");
-    
-        try {
-            const response = await fetch('visualization.html');
-            const html = await response.text();
-            
-            // Clear and show container
-            visualizationContainer.innerHTML = '';
-            visualizationContainer.style.display = 'block';
-            
-            // Extract the chart div and script content
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const chartScript = doc.querySelector('script:not([src])').textContent;
-            
-            // Create chart div
-            const chartDiv = document.createElement('div');
-            chartDiv.id = 'chart';
-            chartDiv.style.width = '100%';
-            chartDiv.style.height = '100%';
-            visualizationContainer.appendChild(chartDiv);
-            
-            // Execute the chart script
-            eval(chartScript);
-            
-            output.textContent = ''; // Clear the output area
-        } catch (error) {
-            console.error("Error loading visualization:", error);
-            output.textContent = `Error: ${error.message}`;
-        }
-    });
 });
