@@ -1,3 +1,38 @@
+function formatReport(data) {
+    const formatted = {
+        scanTime: new Date().toISOString(),
+        totalFiles: Object.keys(data).length,
+        suspiciousFiles: [],
+        virusDetections: [],
+        hiddenFiles: []
+    };
+
+    for (const [path, value] of Object.entries(data)) {
+        if (value.hidden_status?.is_hidden) {
+            formatted.hiddenFiles.push({
+                path,
+                reasons: value.hidden_status.reasons
+            });
+        }
+        
+        if (value.hashes?.virus_scan) {
+            formatted.virusDetections.push({
+                path,
+                details: value.hashes.virus_scan
+            });
+        }
+        
+        if (value.file_type?.analysis?.is_suspicious) {
+            formatted.suspiciousFiles.push({
+                path,
+                reasons: value.file_type.analysis.reasons
+            });
+        }
+    }
+
+    return JSON.stringify(formatted, null, 2);
+}
+
 function getColorAndMessages(value) {
     let color = null;
     let messages = [];
@@ -98,6 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const output = document.getElementById('output');
     const visualizationContainer = document.getElementById('visualizationContainer');
 
+
+    
     fetchDrivesButton.addEventListener('click', async () => {
         console.log("Fetch Drives button clicked");
 
@@ -138,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             if (result.status === 'success') {
                 // Process the data
+                window.scanResult = result;
                 const restructured = restructureData(result.data);
                 const sunburstData = flattenForSunburst(restructured);
     
@@ -171,4 +209,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const getReportButton = document.getElementById('getReport');
+    
+    getReportButton.addEventListener('click', () => {
+        if (!window.scanResult?.data) {
+            output.textContent = "Please scan a drive first";
+            return;
+        }
+
+        const report = formatReport(window.scanResult.data);
+        
+        // Create blob and download
+        const blob = new Blob([report], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `scan-report-${new Date().toISOString().split('T')[0]}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
 });
