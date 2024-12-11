@@ -1,36 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-gray-50">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Tree Viewer</title>
     <script src="https://cdn.plot.ly/plotly-2.27.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        #visualizationContainer {
-            display: none;
-            width: 100%;
-            height: 600px;
-            border: 1px solid #ccc;
-        }
-
         #chart {
-    width: 100%;
-    height: 100%;
-}
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+        }
+        
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
     </style>
 </head>
-<body>
-    <h1>File Tree Viewer</h1>
-    <button id="fetchDrives">Fetch Drives</button>
-    <select id="driveSelect">
-        <option value="">Select a drive</option>
-    </select>
-    <button id="scanDrive">Scan Drive</button>
-    <button id="getReport">Get Report</button>
-    <div id="visualizationContainer">
-        <div id="chart"></div>
+<body class="h-full">
+    <div class="min-h-full">
+        <nav class="bg-white shadow-sm">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 justify-between items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-gray-900">File Tree Viewer</h1>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+                <div class="bg-white shadow rounded-lg p-6">
+                    <!-- Controls -->
+                    <div class="flex flex-col sm:flex-row gap-4 items-center mb-6">
+                        <button id="fetchDrives" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            Fetch Drives
+                        </button>
+                        
+                        <select id="driveSelect" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                            <option value="">Select a drive</option>
+                        </select>
+
+                        <button id="scanDrive" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                            <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                            Scan Drive
+                        </button>
+
+                        <button id="getReport" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <svg class="mr-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Get Report
+                        </button>
+                    </div>
+
+                    <!-- Visualization -->
+                    <div id="visualizationContainer" class="hidden mt-6 bg-gray-50 rounded-lg border border-gray-200">
+                        <div id="chart"></div>
+                    </div>
+
+                    <!-- Output -->
+                    <pre id="output" class="mt-4 p-4 bg-gray-50 rounded-md text-sm text-gray-700"></pre>
+                </div>
+            </div>
+        </main>
     </div>
-    <pre id="output"></pre>
     <script src="renderer.js"></script>
 </body>
 </html>
